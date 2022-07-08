@@ -1,9 +1,117 @@
-.body {
-	margin: 0;
+@import url(../vendor/normalize.css);
+@import url(../vendor/fonts/fonts.css);
+
+:root {
+	--main-color: #fff;
+	--dark-color: #171717;
+	--accent-color: #4a90e2;
+	--btn-color: #232323;
 }
 
-.page {
+.body {
+	margin: 0;
+	font-family: 'Roboto', Helvetica, sans-serif;
+	font-size: 14px;
+}
+
+.container {
 	margin: 0 auto;
 	padding: 0 15px;
 	max-width: 1200px;
+}
+
+.header {
+	background-color: var(--dark-color);
+	padding: 36px 0;
+}
+.header-top {
+	position: relative;
+
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+
+	position: relative;
+}
+.header-top__logo {
+	font-size: 1rem;
+	color: var(--main-color);
+	text-decoration: none;
+	line-height: 17px;
+	font-size: 1.5rem;
+}
+.header-top__logo-highlighting {
+	background-color: var(--accent-color);
+	padding: 3px 5px;
+	text-transform: uppercase;
+	margin-left: 6px;
+	border-radius: 3px;
+}
+
+.header__list {
+	list-style-type: none;
+	display: flex;
+	column-gap: 35px;
+	padding: 0;
+	/* display: none; */
+}
+.header-nav__link {
+	color: var(--main-color);
+	text-decoration: none;
+	position: relative;
+	padding-bottom: 5px;
+	font-size: 2rem;
+}
+
+.header-nav__link::after {
+	content: "";
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	display: block;
+	background: none scroll 0 0 transparent;
+	height: 2px;
+	width: 0;
+	background: var(--accent-color);
+	transition: width 0.3s ease 0s, left 0.3s ease 0s;
+}
+
+.header-nav__link:hover:after {
+	width: 100%;
+	left: 0;
+}
+
+.form-search {
+	width: 30px;
+
+	display: flex;
+	align-items: center;
+}
+
+.form-search__field {
+	position: absolute;
+	padding: 15px 10px;
+	right: 0;
+	border-radius: .5rem;
+	border: none;
+	font-size: 1.5rem;
+	z-index: 1;
+	display: none;
+	width: 98.3%;
+}
+
+.form-search__btn {
+	position: absolute;
+	right: 10px;
+	width: 1.5rem;
+	height: 1.5rem;
+	outline: none;
+	border: none;
+	background: url(../images/search-icon.svg) center/contain no-repeat;
+	color: #fff;
+	cursor: pointer;
+	z-index: 2;
+}
+.field-open {
+	display: block;
 }
