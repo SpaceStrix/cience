@@ -100,6 +100,10 @@
 	width: 98.3%;
 }
 
+.animated {
+	animation: form-anim .5s linear;
+}
+
 .form-search__btn {
 	position: absolute;
 	right: 10px;
@@ -114,4 +118,19 @@
 }
 .field-open {
 	display: block;
+}
+
+@keyframes form-anim {
+	from {
+		width: 0;
+		opacity: 0.5;
+	}
+	50% {
+		width: 50%;
+		opacity: 0.8;
+	}
+	to {
+		width: 100%;
+		opacity: 1;
+	}
 }
